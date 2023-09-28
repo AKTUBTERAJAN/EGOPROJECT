@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+<style xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    .from-control
+    {
+    height:45px;
+    width:250px;
+    margin-bottom:2%;
+    }
+</style>
+<div class="text-center fs-2 pt-3">Become a<b class="txt-mycolor"> Volunteers
+<i class="fa-solid fa-phone-volume"></i>
+</b></div>
+<div class="row py-3">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+            <div class="col-sm-6 p-4 my-1 rounded" style="background:#e4e4e4;">
+                <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            Name<input type="text" name="name" required placeholder="Name.." class="form-control"/>
+            Email<input type="email" name="email" required placeholder="Email.." class="form-control"/>
+            Mobile(Whatsapp No : )
+            <input type="number" name="mobile" required placeholder="Mobile.." class="form-control"/>
+            Profile Picture
+            <input type="file" name="fu" required class="form-control"/>
+            Current position
+            <input type="text" name="cposition" placeholder="Current position..." required class="form-control"/>
+            Address
+            <textarea name="address" placeholder="Address" class="form-control"></textarea>
+            <input type="submit" value="Save" class="btn bg-mycolor text-light"/>
+            </div>
+            <div class="col-sm-6 p-4 my-1 rounded">
+                <img src="{% static 'images/event.jpg'%}" class="img-fluid"/>
+                <b class="text-danger">As many of you are aware, the Art & Events Team at KHUSHII, are known to create interesting, interactive and conceptually unique activities for our donors and patrons. Over the years, many of you have participated in these initiatives and lent your support. Our aim through our Art & Events fundraisers has been to give back to our patrons and supporters, by not only having the satisfaction and goodwill associated with helping someone less privileged through their generosity, but also to take home a tangible memory with them – to remind them of the smiles they have painted on the faces of KHUSHII’s beneficiaries, and the brighter futures they have helped build</b>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

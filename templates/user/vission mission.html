@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+<style>
+    .a
+    {
+    background:url('{% static "images/b1.jpeg"%}');
+    background-size:cover;
+    }
+    .c
+    {
+    background:url('{% static "images/b2.jpeg"%}');
+    background-size:cover;
+    }
+</style>
+<div class="text-center fs-2">vission <b class="txt-mycolor">mission</b></div>
+<div class="row">
+    <div class="col-sm-6 fs-2 text-center a img-thumbnail mx-auto" style="border:10px solid black;"><b class="txt-mycolor"> Vission </b>
+       <p class="fs-4 px-3 text-light">
+           Envisioning a transformed India, a nation and society free from poverty and ignorance, where every citizen enjoys their fundamental rights without inequality. This vision encompasses access to quality education, nutritious food, healthcare, and adequate shelter for all individuals. It is a collective effort to build a better India that empowers women and fosters self-dependence. Together, we strive to create an inclusive society that guarantees basic well-being, education, empowerment, and equality to every citizen.”Nitya Foundation envisions creating positive and lasting impacts by fostering education, healthcare, and sustainable development, uplifting communities, and empowering individuals to thrive in a compassionate and inclusive world
+       </p>
+    </div>
+    <div class="col-sm-6 fs-2 text-center c img-thumbnail mx-auto" style="border:10px solid black;><b class="txt-mycolor">Mission</b>
+        <p class="fs-4 px-3">
+            To build a more compassionate and thriving society by ensuring access to basic necessities for every underprivileged individual. We strive to serve as a collaborative partner, working alongside schools, NGOs, corporates, and government agencies to implement impactful programs throughout India. Through our collective efforts, we aim to uplift and empower marginalized communities, providing them with essential resources and opportunities. By fostering collaboration and leveraging partnerships, we are dedicated to creating a beautiful and equitable society where every individual can lead a dignified life.
+        </p>
+    </div>
+</div>
+
+        <!-- vission mission -->
+       <div class="row py-5 bg-mycolor  py-3">
+  <div class="col-sm-4">
+    <img src="{% static 'images/eb.jpg'%}" class="img-fluid"style="height:400px;width:400px"/>
+  </div>
+  <div class="col-sm-8 py-2">
+   <h1 class="text-center"><b>The Akshaya Patra Foundation</b></h1>
+    <span class="fs-5" style="text-align:justify;">The Akshaya Patra foundation is not-for-profit organization headquartered in
+    Bengaluru , India.The Foundation strives to eliminate classroom hunger by
+    implementing the <b>PM POSHAN</b>(Mid -Day Meal)Programme. It provides nutiritious
+    meals to children studying in government school  and government schoold and government
+    aided schools.
+    Akshaya Patra also aims to counter mainutrition and support the right to eduction
+    chidren hailing from socio-economally challenging backgrounds.</span><br/>
+    <div class="row">
+        <div class="col-sm-6 fs-3 px-5  border-end border-2" >
+            Our Vision
+           <p class="fs-5">No Child In India shall be deprived<br/>
+      Of Education because of hunger</p>
+        </div>
+        <div class="col-sm-6 fs-3 px-5">
+                    Our Mission
+           <p class="fs-5">No Child In India shall be deprived<br/>
+      Of Education because of hunger</p>
+        </div>
+  </div>
+     <a href="/user/vission mission/" class="btn btn-dark text-light rounded-pill">View More</a>
+</div>
+</div>
+</div>
+
+
+    <!-- endvission mission -->
+
+{% endblock %}

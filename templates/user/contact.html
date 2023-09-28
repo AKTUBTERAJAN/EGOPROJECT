@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+<style>
+    .form-control
+    {
+    height:50px;
+    margin-bottom:.8%;
+    }
+</style>
+
+<h1>contact us</h1>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-sm-10">
+        <div class="row ps-5">
+            <div class="col-sm-6 " style="background:#f1f3f4; border:2px solid #f8f9fa; border-radius:6px">
+                <form method="post ">
+                    {% csrf_token %}
+                    Name<input type="text" name="name" placeholder="name..." class="form-control" required/>
+                    Email<input type="email" name="email" placeholder="email..." class="form-control" required/>
+                    Mobile<input type="number" name="mobile" placeholder="mobile..." class="form-control" required/>
+                    Message<textarea  name="msg" class="form-control" placeholder="message"></textarea>
+                    <input type="submit" value="Save" class="btn bg-mycolor text-light">
+                </form>
+            </div>
+            <div class="col-sm-6 " style="background:#f1f3f4; border:2px solid #f8f9fa; border-radius:6px">
+                <div class="row t1">
+                    <div class="col-sm-5 text-center fs-3 mt-4 ps-1">Contact Info</div>
+                <div class="row t2 ">
+                    <div class="col-sm-7  ps-5 txt-mycolor"><i class="fa-solid fa-location-dot txt-mycolor"></i> &nbsp;Office Address</div>
+                        <div class="ps-5 ">&nbsp;&nbsp;&nbsp;&nbsp; Plot No. 47</br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;radha nagar, Hardoi<br/>
+                           &nbsp;&nbsp;&nbsp;&nbsp; Uttar Pradesh 241001
+                    </div>
+                    <div class="ps-5 txt-mycolor mt-3"><i class="fa-solid fa-phone txt-mycolor"></i>&nbsp;&nbsp;Call Us</div>
+                    <div class="ps-5">&nbsp;&nbsp;&nbsp;&nbsp;+91&nbsp;6531245678<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+91&nbsp;9568457895
+                    </div>
+                    <div class="ps-5 txt-mycolor mt-3">
+                        <i class="fa-solid fa-envelope txt-mycolor"></i>&nbsp;&nbsp;Mail Us
+                    </div>
+                    <div class="ps-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ashwaniyadavji1234@gmail.com</div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

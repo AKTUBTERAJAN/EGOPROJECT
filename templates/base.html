@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet"/>
+    <link href="{% static 'css/all.css'%}" rel="stylesheet"/>
+    <style>
+
+        :root
+        {
+        --bgcolor:linear-gradient(45deg,#FF5722,#bf360c);
+        --txtcolor:#FF5722;
+        }
+        .t1
+        {
+         font-size:14px;
+        }
+        .bg-mycolor
+        {
+        background:var(--bgcolor) !important;
+        }
+        .txt-mycolor
+        {
+        color:var(--txtcolor);
+        }
+        .fa-brands
+        {
+        border:1px solid white;
+        padding:.3%;
+        }
+        .fa-brands:hover
+        {
+        transform: rotate(360deg);
+        transition: all 1s;
+        background: white;
+        color: #FF8800;
+        }
+        #menu
+        {
+        background:var(--bg-color) !important;
+        }
+        #menu ul li a
+        {
+        color:white;
+        }
+        #menu ul li a:hover
+        {
+        background:white;
+        color:black !important;
+        border-radius:5px;
+        }
+        .b
+        {
+        animation:myanim infinite 1s;
+        }
+        @keyframes myanim{
+        from{
+        transform:rotate(360deg);
+        transition:all 1s;
+        }
+        to{
+          transform:rotate(0deg);
+        transition:all 1s;
+        }
+        }
+
+        .footer1
+        {
+        min-height:300px;
+        }
+        .footer2
+        {
+        min-height:50px;
+        margin-top:.1%;
+        }
+
+    </style>
+</head>
+<body style="overflow-x:hidden">
+<script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+<div class="container-fluid">
+    <div class="row t1 text-center bg-mycolor text-light py-1">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <i class="fa-solid fa-phone b"></i>+91 8395810735
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <i class="fa-solid fa-envelope"></i>ashwaniyadavji1234@gamil.com
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+         Suport me
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+    </div>
+<div class="row t2">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+            <div class="col-sm-4 p-2">
+                Gracious <b class="txt-mycolor">Givers Foundation <i class="fa-solid fa-hand-holding-heart"></i></b>
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-6 p-2">
+                <a href="/user/donatenow/" class=" btn btn-sm bg-mycolor text-light rounded-pill"><i class="fa-solid fa-indian-rupee-sign"></i> Dnoate Now</a>
+                <a href="/user/help/"class=" btn btn-sm bg-mycolor text-light rounded-pill"><i class="fa-solid fa-handshake-angle"></i>Need a Help</a>
+                <a href="/user/volunteerlist/"class=" btn btn-sm bg-mycolor text-light rounded-pill"><i class="fa-solid fa-handshake-angle"></i>Our Donators</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="row t3 bg-mycolor">
+        <div class="col-sm-10 mx-auto">
+            <!-- start menu -->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+  <div class="container-fluid">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" sytle="background:aqua; border:red;">
+        <li class="nav-item rounded rounded-4">
+          <a class="nav-link active" aria-current="page" href="/user/index/">
+              <i class="fa-solid fa-house"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/vission mission/"><i class="fa-solid fa-eye-slash"></i> vission mission</a>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link" href="/user/contact/">
+              <i class="fa-solid fa-address-book"></i> Contact us</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="/user/stories & change/"><i class="fa-solid fa-book-open-reader"></i> stories of change</a>
+           </li>
+           <li class="nav-item">
+          <a class="nav-link" href="/user/upcomingevent/"><i class="fa-solid fa-calendar-days"></i> upcomingevent</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="/user/volunteer/">
+              <i class="fa-solid fa-laptop"></i> volunteering & Internships</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/admin/">
+               <i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        </li>
+          </ul>
+    </div>
+            </nav>
+  </div>
+
+            <!-- end menu -->
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12" style=min-height:400px;">
+{% block childpage %}
+{% endblock %}
+    </div>
+</div>
+<div class="container-fluid">
+<div class="row footer1">
+    <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted ">
+
+
+  <!-- Section: Links  -->
+  <!--<section class="">-->
+    <div class="container text-center text-md-start mt-5 ">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            DESIRE<b class="text-mycolor">CART<i class="fa-solid fa-cart-shopping"></i></b>
+          </h6>
+          <div>Address: hardoi,Uttar Pradesh 241001</div>
+		  <div>Phone:6306629483</div>
+		  <div>E-mail:ashwaniyadavji1234@gmail</div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="fw-bold mb-4">
+            Information
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">About Us</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Checkout</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Contact</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="fw-bold mb-4">
+            My Account
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">My Account</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Contact</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Shopping Cart</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="fw-bold mb-4">Join Our Newsletter Now</h6>
+
+          <p>
+            Get e-mail updatessbout our latest shop and special offers
+          </p>
+		  <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Enter Your Mail" aria-label="Search">
+      <button type="button" class="btn text-mycolor">SUBSCRIBE</button>
+
+    </form>
+
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+
+</footer>
+<!-- Footer -->
+</div>
+<div class="row footer2 bg-success  pt-3">
+    <div class="col-sm-4"><b> support our person <i class="fa-solid fa-person"></i></b></div>
+    <div class="col-sm-4">ashwaniyadavji1234@gmail.com</div>
+    <div class="col-sm-4">
+           <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-youtube"></i>
+    </div>
+</div>
+</div>
+</body>
+</html>

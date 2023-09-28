@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<style>
+    .volunteer.fa-solid
+    {
+    border:2px solid var(--txtcolor);
+    height:35px;
+    width:35px;
+    text-align:center;
+    line-height:35px;
+    color:var(--txtcolor);
+    }
+</style>
+<div class="row py-5">
+    <div class="text-center fs-2 mt-2 py-2">Our <b class="txt-mycolor">
+        Great Gracious Givers
+        <i class="fa-solid fa-address-card"></i>
+    </b> </div>
+    {% for x in ddata %}
+    <div class="col-lg-3 col-md-4 col-sm-12">
+        <div class="card pt-3">
+            <img src="/{{x.picture}}" class="card-img-top d-block mx-auto" style="height:150px;width:150px;border-radius:50%;border:4px solid #e3e3e3;"/>
+            <div class="card-body mt-3 " style="background:#e3e3e3;">
+                <p class="card-text">
+                    <i class="fa-solid fa-user">&nbsp;&nbsp;</i>&nbsp;&nbsp;<b>{{x.name}}</b></br>
+                    <i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{x.email}}</br>
+                    <i class="fa-solid fa-phone"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{x.mobile}}</br>
+                    <i class="fa-solid fa-city"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{x.address}}</br>
+
+                </p>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+<div class="row" style="background:#e3e3e3;">
+<div class="text-center fs-2" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">Our<b class="txt-mycolor">Volunteer list
+</b></div>
+
+    {% for i in vdata %}
+    <div class="col-sm-6">
+        <!-- start card -->
+        <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/{{i.picture}}" class="img-fluid rounded-start" style="max-height:220px;min-height:180px;" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text volunteers">
+            <i class="fa-solid fa-user">&nbsp;&nbsp;</i>&nbsp;&nbsp;<b>{{i.name}}</b></br>
+            <i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{i.email}}</br>
+            <i class="fa-solid fa-phone"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{i.mobile}}</br>
+            <i class="fa-solid fa-city"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{i.city}}</br>
+            <i class="fa-solid fa-graduation-cap"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{i.current_position}}</br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+        <!-- end card -->
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

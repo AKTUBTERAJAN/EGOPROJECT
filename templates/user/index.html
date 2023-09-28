@@ -1,0 +1,174 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block childpage %}
+<div class="row">
+
+</div>
+<div class="col-sm-12" >
+    <!--start slider -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/ka.jpg'%}" style="max-height:500px;" class="d-block w-100 rounded rounded-3">
+                     alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5></h5>
+                    <p></p>
+                </div>
+            </div>
+            {% for i in sd %}
+            <div class="carousel-item">
+                <img src="/{{i.slider_picture}}" class="d-block w-100" style="max-height:500px;" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{{i.headlines}}</h5>
+                    <p>{{i.slider_dec}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- end slider -->
+
+
+
+<!-- start letest news -->
+<div class="row news py-3" style="background:white !important">
+    <div class="fs-2">upcoming <b class="txt-mycolor">event</b></div>
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+            {% for i in uedata %}
+            <div class="col-sm-3 py-2">
+                <div class="card">
+                    <img src="/{{i.event_picture}}" class="card-img-top"/>
+                    <div class="card-body">
+                        <h5 class="card-tittle">{{i.event_title}}</h5>
+                        <span>{{i.event_purpose}}</span><br/>
+                        <a href="/user/viewevent?msg={{i.id}}" class="btn bg-mycolor text-dark mt-2 btn-sm rounded-pill">view more
+                            <i class="fa-regular fa-eye"></i>
+                        </a><br/>
+                        <span class="text-muted">
+                            <i class="fa-solid fa-calender-days"></i>
+                            {{i.event_date}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <!-- end letest news -->
+<div class="row donator py-4 bg-mycolor">
+    <div class="fs-2 pb-2">Our Greart Grecious<b class="text-light"> Givers</b></div>
+    {% for i in ddata %}
+    <div class="col-lg-2 col-md-4 col-sm-12 py-2">
+        <div class="card pt-3">
+            <a href="/user/volunteerlist?did={{i.id}}"><img src="/{{i.picture}}" class="card-img-top d-block mx-auto" style="height:100px;width:100px;border-radius:50%;border:4px solid #e3e3e3;"/></a>
+            <div class="card-body mt-3 " style="background:#e3e3e3;">
+                <b>/{{i.name}}</b></br>
+                <i class="fa-solid fa-indian-rupee-sign"></i><small>Donate Amount : {{i.rupees}}/-</small>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    <div class="row about bg-light">
+        <div class="fs-2">About <b class="txt-mycolor">Us</b></div>
+        <div class="row  py-3" style="text-align:justify">
+            <div class="col-sm-6 p-5">
+                <b>“At least 463 million school children in the world, were unable to access remote learning during 2020 ” – UNICEF</b>
+                <p>
+                    HelpAge India invites you to join its WEBINAR on Lifelong Learning for Senior Citizens - an Imperative for Active & Productive Ageing, on Monday, Sept.18, from 3:00 – 4:30 p.m.
+
+Active ageing and lifelong learning are key for senior citizens to lead active, healthy, and dignified lives. Hear experts provide insight & perspective, into this growing trend and the need to reinvent oneself in later years
+                </p>
+            </div>
+                <div class="col-sm-6">
+                      <img src="{% static 'images/eb.jpg' %}" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row donator"></div>
+    <div class="row volunteers p-2 bg-success" >
+        <div class="fs-2">Our Grecious<b class="txt-mycolor">Givers Family</b></div>
+        <div class="col-sm-12">
+            <div class="row">
+                <!-- volunteer -->
+                {% for i in vdata %}
+                <div class="col-lg-2 col-md-4 col-sm-12 p-2 py-2">
+                    <div class="card pb-2" >
+                        <img src="/{{i.picture}}" style="max-height:150px;" class="card-img-top "/>
+
+                    <div class="card body">
+                        <a href="/user/volunteerlist/?vid={{i.email}}" style="text-decoration:none;color:grey;"><p class="card-text text-center"><b>{{i.name}}</b></p></a><b class="text-center py-2">{{i.current_position}}</b>
+
+                    </div>
+                        </div>
+                </div>
+                {% endfor %}
+                <!-- endvolunteer -->
+            </div>
+        </div>
+    </div>
+    <!-- vission mission -->
+       <div class="row py-5 bg-mycolor  py-3">
+  <div class="col-sm-4">
+    <img src="{% static 'images/eb.jpg'%}" class="img-fluid"style="height:400px;width:400px"/>
+  </div>
+  <div class="col-sm-8 py-2">
+   <h1 class="text-center"><b>The Akshaya Patra Foundation</b></h1>
+    <span class="fs-5" style="text-align:justify;">The Akshaya Patra foundation is not-for-profit organization headquartered in
+    Bengaluru , India.The Foundation strives to eliminate classroom hunger by
+    implementing the <b>PM POSHAN</b>(Mid -Day Meal)Programme. It provides nutiritious
+    meals to children studying in government school  and government schoold and government
+    aided schools.
+    Akshaya Patra also aims to counter mainutrition and support the right to eduction
+    chidren hailing from socio-economally challenging backgrounds.</span><br/>
+    <div class="row">
+        <div class="col-sm-6 fs-3 px-5  border-end border-2" >
+            Our Vision
+           <p class="fs-5">No Child In India shall be deprived<br/>
+      Of Education because of hunger</p>
+        </div>
+        <div class="col-sm-6 fs-3 px-5">
+                    Our Mission
+           <p class="fs-5">No Child In India shall be deprived<br/>
+      Of Education because of hunger</p>
+        </div>
+  </div>
+     <a href="/user/vission mission/" class="btn btn-dark text-light rounded-pill">View More</a>
+</div>
+</div>
+</div>
+
+
+    <!-- endvission mission -->
+<!-- testimonial -->
+
+<!-- testimonial -->
+    {% endblock%}

@@ -1,0 +1,36 @@
+ {% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+<div class="text-center fs-2">event<b class="txt-mycolor">Detail
+<i class="fa-solid fa-phone-volume"></i>
+</b>
+</div>
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+            {% for i in edata %}
+        <div class="col-sm-3">
+
+             <div class="card">
+                    <img src="/{{i.event_picture}}" class="card-img-top"/>
+                    <div class="card-body">
+                        <h5 class="card-tittle">{{i.event_title}}</h5>
+                        <span>{{i.event_purpose}}</span><br/>
+                        <a href="/user/viewevent?msg={{i.id}}" class="btn bg-mycolor text-dark mt-2 btn-sm rounded-pill">view more
+                            <i class="fa-regular fa-eye"></i>
+                        </a><br/>
+                        <span class="text-muted">
+                            <i class="fa-solid fa-calender-days"></i>
+                            {{i.event_date}}
+                        </span>
+                    </div>
+                </div>
+
+
+    </div>
+            {% endfor %}
+        </div>
+        </div>
+</div>
+ </div>
+{% endblock %}
